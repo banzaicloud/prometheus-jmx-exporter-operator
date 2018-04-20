@@ -1,0 +1,11 @@
+apiVersion: "banzaicloud.com/v1alpha1"
+kind: "PrometheusJmxExporter"
+metadata:
+  name: "example-prom-jmx-exp"
+spec:
+  labelSelector:
+    app: dummyapp
+  config:
+    configMapName: prometheus-jmx-exporter-config
+    configMapKey: config.yaml
+  port: 9400
