@@ -20,7 +20,7 @@ func printVersion() {
 func main() {
 	printVersion()
 	sdk.Watch("banzaicloud.com/v1alpha1", "PrometheusJmxExporter", "default", 10)
-	//sdk.Watch("v1", "Pod", "default", 0)
+	sdk.Watch("v1", "Pod", "default", 10)
 	sdk.Handle(stub.NewHandler())
 	sdk.Run(context.TODO())
 }

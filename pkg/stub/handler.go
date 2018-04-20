@@ -37,7 +37,7 @@ func (h *Handler) Handle(ctx types.Context, event types.Event) error {
 			prometheusJmxExporter.Namespace,
 			prometheusJmxExporter.Name)
 
-		if event.Deleted { // apparently the deleted event is never triggered
+		if event.Deleted {
 			logrus.Infof(
 				"PrometheusJmxExporter deleted event received for '%s/%s'",
 				prometheusJmxExporter.Namespace,
@@ -121,7 +121,7 @@ func (h *Handler) Handle(ctx types.Context, event types.Event) error {
 			return nil
 		}
 
-		if event.Deleted { // apparently the deleted event is never triggered
+		if event.Deleted {
 			logrus.Infof("Pod deleted event received for '%s/%s'", pod.Namespace, pod.Name)
 			// pod is being deleted thus remove the prometheus endpoint that
 			// is exposed by this pod if there is any

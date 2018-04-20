@@ -14,6 +14,7 @@
   revision = "de5bf2ad457846296e2031421a34e2568e304e35"
 
 [[projects]]
+  branch = "master"
   name = "github.com/coreos/operator-sdk"
   packages = [
     "pkg/k8sclient",
@@ -26,8 +27,7 @@
     "pkg/util/k8sutil",
     "version"
   ]
-  revision = "4dde66ab241ea83f5c12625ad2509174daf9c572"
-  version = "v0.0.3"
+  revision = "e5822e0456eaba6ebe3e50a0fc032ece58ceb908"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
@@ -50,8 +50,8 @@
     ".",
     "log"
   ]
-  revision = "26b41036311f2da8242db402557a0dbd09dc83da"
-  version = "v2.6.0"
+  revision = "92cd0815dd1a028a6e69faee9757c7436238e252"
+  version = "v2.6.1"
 
 [[projects]]
   name = "github.com/ghodss/yaml"
@@ -75,7 +75,7 @@
   branch = "master"
   name = "github.com/go-openapi/spec"
   packages = ["."]
-  revision = "370d9e047557906322be8396e77cb0376be6cb96"
+  revision = "bcff419492eeeb01f76e77d2ebc714dc97b607f5"
 
 [[projects]]
   branch = "master"
@@ -219,12 +219,13 @@
   name = "golang.org/x/net"
   packages = [
     "context",
+    "http/httpguts",
     "http2",
     "http2/hpack",
     "idna",
     "lex/httplex"
   ]
-  revision = "61147c48b25b599e5b561d2e9c4f3e1ef489ca41"
+  revision = "d41e8174641f662c5a2d1c7a5f9e828788eb8706"
 
 [[projects]]
   branch = "master"
@@ -233,7 +234,7 @@
     "unix",
     "windows"
   ]
-  revision = "2281fa97ef7b0c26324634d5a22f04babdac8713"
+  revision = "a2a45943ae67364d56c5d7d62dee78cff16c8dc8"
 
 [[projects]]
   name = "golang.org/x/text"
@@ -408,17 +409,17 @@
     "util/workqueue"
   ]
   revision = "9389c055a838d4f208b699b3c7c51b70f2368861"
-  version = "kubernetes-1.9.3"
+  version = "kubernetes-1.9.1"
 
 [[projects]]
   branch = "master"
   name = "k8s.io/kube-openapi"
   packages = ["pkg/common"]
-  revision = "f442ecb314a3679150c272e2b9713d8deed5955d"
+  revision = "0f2f0396e266ad24afbd02375ba74c0dda1e3611"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e5e09aadbf754e50f37dbb9ab53d5c0f8c794e7c5af26b6150fdfc8903a19c80"
+  inputs-digest = "7a605cd9cfac823be489e95d933c1780af5618bad2d8a4f516414f0b305ebb57"
   solver-name = "gps-cdcl"
   solver-version = 1

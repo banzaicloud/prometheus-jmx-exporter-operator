@@ -31,4 +31,4 @@ spec:
           image: banzaicloud/prometheus-jmx-operator:v0.0.1
           command:
           - prometheus-jmx-exporter-operator
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
