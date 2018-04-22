@@ -471,7 +471,9 @@ func exposeContainerPort(portNumber int32, pod *v1.Pod, container *v1.Container)
 	}
 
 	container.Ports = append(container.Ports, v1.ContainerPort{
-		ContainerPort: portNumber,
+		ContainerPort:	portNumber,
+		Name:		  	"prometheusJmxMetrics",
+		Protocol: 		v1.ProtocolTCP,
 	})
 
 	return action.Update(pod)

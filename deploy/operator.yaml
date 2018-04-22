@@ -26,9 +26,10 @@ spec:
       labels:
         name: prometheus-jmx-exporter-operator
     spec:
+      serviceAccountName: prometheus-jmx-exporter-operator
       containers:
         - name: prometheus-jmx-exporter-operator
           image: banzaicloud/prometheus-jmx-operator:v0.0.1
           command:
           - prometheus-jmx-exporter-operator
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
