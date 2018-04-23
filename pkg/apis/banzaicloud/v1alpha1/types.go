@@ -32,26 +32,28 @@ type PrometheusJmxExporterSpec struct {
 }
 
 type PrometheusJmxExporterConfig struct {
-	StartDelaySeconds         *int     `yaml:"startDelaySeconds,omitempty"`
-	HostPort                  *string  `yaml:"hostPort,omitempty"`
-	Username                  *string  `yaml:"username,omitempty"`
-	Password                  *string  `yaml:"password,omitempty"`
-	JmxUrl                    *string  `yaml:"jmxUrl,omitempty"`
-	Ssl                       *bool    `yaml:"ssl,omitempty"`
-	LowercaseOutputName       *bool    `yaml:"lowercaseOutputName,omitempty"`
-	LowercaseOutputLabelNames *bool    `yaml:"lowercaseOutputLabelNames,omitempty"`
-	WhitelistObjectNames      []string `yaml:"whitelistObjectNames,omitempty"`
-	BlacklistObjectNames      []string `yaml:"blacklistObjectNames,omitempty"`
-	Rules                     []struct {
-		Pattern           *string           `yaml:"pattern,omitempty"`
-		Name              *string           `yaml:"name,omitempty"`
-		Value             *string           `yaml:"value,omitempty"`
-		ValueFactor       *float32          `yaml:"valueFactor,omitempty"`
-		Labels            map[string]string `yaml:"labels,omitempty"`
-		Help              *string           `yaml:"help,omitempty"`
-		Type              *string           `yaml:"type,omitempty"`
-		AttrNameSnakeCase *bool             `yaml:"attrNameSnakeCase,omitempty"`
-	} `yaml:"rules,omitempty"`
+	StartDelaySeconds         *int                               `yaml:"startDelaySeconds,omitempty"`
+	HostPort                  *string                            `yaml:"hostPort,omitempty"`
+	Username                  *string                            `yaml:"username,omitempty"`
+	Password                  *string                            `yaml:"password,omitempty"`
+	JmxUrl                    *string                            `yaml:"jmxUrl,omitempty"`
+	Ssl                       *bool                              `yaml:"ssl,omitempty"`
+	LowercaseOutputName       *bool                              `yaml:"lowercaseOutputName,omitempty"`
+	LowercaseOutputLabelNames *bool                              `yaml:"lowercaseOutputLabelNames,omitempty"`
+	WhitelistObjectNames      []string                           `yaml:"whitelistObjectNames,omitempty"`
+	BlacklistObjectNames      []string                           `yaml:"blacklistObjectNames,omitempty"`
+	Rules                     []PrometheusJmxExporterConfigRules `yaml:"rules,omitempty"`
+}
+
+type PrometheusJmxExporterConfigRules struct {
+	Pattern           *string           `yaml:"pattern,omitempty"`
+	Name              *string           `yaml:"name,omitempty"`
+	Value             *string           `yaml:"value,omitempty"`
+	ValueFactor       *float32          `yaml:"valueFactor,omitempty"`
+	Labels            map[string]string `yaml:"labels,omitempty"`
+	Help              *string           `yaml:"help,omitempty"`
+	Type              *string           `yaml:"type,omitempty"`
+	AttrNameSnakeCase *bool             `yaml:"attrNameSnakeCase,omitempty"`
 }
 
 type PrometheusJmxExporterStatus struct {
