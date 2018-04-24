@@ -30,6 +30,11 @@ spec:
       containers:
         - name: prometheus-jmx-exporter-operator
           image: banzaicloud/prometheus-jmx-operator:v0.0.1
+          env:
+          - name: OPERATOR_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
           command:
           - prometheus-jmx-exporter-operator
           imagePullPolicy: IfNotPresent

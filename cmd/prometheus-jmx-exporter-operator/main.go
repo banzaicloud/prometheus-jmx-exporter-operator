@@ -9,6 +9,7 @@ import (
 	sdkVersion "github.com/coreos/operator-sdk/version"
 
 	"github.com/sirupsen/logrus"
+	"os"
 )
 
 func printVersion() {
@@ -19,8 +20,10 @@ func printVersion() {
 
 func main() {
 	printVersion()
-	sdk.Watch("banzaicloud.com/v1alpha1", "PrometheusJmxExporter", "default", 0)
-	sdk.Watch("v1", "Pod", "default", 0)
+	namespace := os.Getenv("OPERATOR_NAMESPACE")
+
+	sdk.Watch("banzaicloud.com/v1alpha1", "PrometheusJmxExporter", namespace, 0)
+	sdk.Watch("v1", "Pod", namespace, 0)
 	sdk.Handle(stub.NewHandler())
 	sdk.Run(context.TODO())
 }
